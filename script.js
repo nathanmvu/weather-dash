@@ -28,7 +28,6 @@ const init = () => {
       .then(function(response) {
         //console.log(response);
         let fullCityName = response.name;
-        console.log(fullCityName);
         let weatherIcon = response.weather[0].icon;
         weatherPic.setAttribute('src', 'https://openweathermap.org/img/wn/' + weatherIcon + '@2x.png');
         weatherPic.setAttribute('alt', 'Weather Icon');
@@ -49,7 +48,6 @@ const init = () => {
         method: 'GET'
       })
         .then(function(response) {
-          //console.log(response);
           let uvIndexBadge = document.createElement('span')
           uvIndexBadge.setAttribute('class', 'badge badge-danger');
           uvIndexBadge.innerHTML = response[0].value;
@@ -65,7 +63,6 @@ const init = () => {
         method: 'GET'
       })
         .then(function(response) {
-          console.log(response);
           const forecast = document.querySelectorAll('#forecast');
           for(let i = 0; i < 5; i++) {
             // Getting mid-day reading for each day
